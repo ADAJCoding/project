@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+	<style>
+        /* Global styles */
+body {
+    font-family: sans-serif;
+    background-color: #a0f26a;
+    color: #333;
+  }
+  
+  a {
+    color: #6cbb3c;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #6cbb3c;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  /* Navigation styles */
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: #5d9c33;
+  }
+  
+  /* Form styles */
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  form button[type="submit"] {
+    background-color: #6cbb3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #5d9c33;
+  }
+  
+  /* Main content styles */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #6cbb3c;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+		table {
+			border-collapse: collapse;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		input[type="number"] {
+			width: 50px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: right;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+
+		form {
+			margin: 20px;
+			display: inline-block;
+			width: 100%;
+		}
+
+	</style>
+</head>
+<body>
+    <h1>Welcome to The Baked Goods Shop</h1>
+    <div class="d-flex justify-content-around">
+        <form action="/register" method="post" class="col-4 p-4 bg-dark text-primary">
+            <h2 class="text-primary">Register Here</h2>
+            {% with messages = get_flashed_messages(category_filter=['register']) %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Flash AHHHH!!!!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="first_name">First Name:</label>
+                <input type="text" name="first_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="last_name">Last Name:</label>
+                <input type="text" name="last_name" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="confirm">Confirm Password:</label>
+                <input type="password" name="confirm" class="form-control">
+            </div>
+            <input type="submit" value="Register" class="btn btn-primary">
+        </form>
+        <form action="/login" method="post" class="col-4 p-4 bg-primary text-light">
+            <h2 class="text-success">Login Here</h2>
+            {% with messages = get_flashed_messages(category_filter=['login']) %}
+                {% if messages %}
+                <div class="alert alert-danger" role="alert">
+                    <strong>Flash AHHH!!!!</strong>
+                        {% for message in messages %}
+                        <p>{{message}}</p>
+                        {% endfor %}
+                </div>
+                {% endif %}
+            {% endwith %}
+            <div class="form-group">
+                <label for="email">Email:</label>
+                <input type="text" name="email" class="form-control">
+            </div>
+            <div class="form-group">
+                <label for="password">Password:</label>
+                <input type="password" name="password" class="form-control">
+            </div>
+            
+            <input type="submit" value="Login" class="btn btn-success">
+        </form>
+    </div>
+</body>
+</html>

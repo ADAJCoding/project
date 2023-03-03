@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>The Baked Goods Shop - Menu</title>
+    <meta name="description" content="Check out our menu of delicious baked goods!">
+    <meta name="keywords" content="bakery, baked goods, bread, pastries, cakes, cupcakes, cookies">
+    <meta name="author" content="Your Name Here">
+	<style>
+        /* Global styles */
+body {
+    font-family: sans-serif;
+    background-color: #a0f26a;
+    color: #333;
+  }
+  
+  a {
+    color: #6cbb3c;
+  }
+  
+  /* Header styles */
+  header {
+    background-color: #6cbb3c;
+    color: #fff;
+    padding: 10px;
+  }
+  
+  h1, h2, h3 {
+    margin: 0;
+  }
+  
+  /* Navigation styles */
+  nav ul {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  
+  nav li {
+    display: inline-block;
+    margin-right: 10px;
+  }
+  
+  nav a {
+    display: block;
+    padding: 10px;
+    color: #fff;
+    text-decoration: none;
+  }
+  
+  nav a:hover {
+    background-color: #5d9c33;
+  }
+  
+  /* Form styles */
+  form label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+  }
+  
+  form input[type="text"],
+  form input[type="email"],
+  form textarea {
+    display: block;
+    width: 100%;
+    padding: 5px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+  }
+  
+  form button[type="submit"] {
+    background-color: #6cbb3c;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+  }
+  
+  form button[type="submit"]:hover {
+    background-color: #5d9c33;
+  }
+  
+  /* Main content styles */
+  main {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 20px;
+  }
+  
+  h2 {
+    color: #6cbb3c;
+    margin-bottom: 10px;
+  }
+  
+  p {
+    line-height: 1.5;
+    margin-bottom: 10px;
+  }
+  
+  /* Footer styles */
+  footer {
+    background-color: #222;
+    color: #fff;
+    padding: 10px;
+    text-align: center;
+  }
+  
+  footer p {
+    margin: 0;
+  }
+		table {
+			border-collapse: collapse;
+			margin-bottom: 20px;
+			width: 100%;
+		}
+
+		th, td {
+			padding: 10px;
+			text-align: left;
+			border-bottom: 1px solid #ddd;
+		}
+
+		th {
+			background-color: #4CAF50;
+			color: white;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 20px;
+		}
+
+		input[type="number"] {
+			width: 50px;
+		}
+
+		input[type="submit"] {
+			background-color: #4CAF50;
+			color: white;
+			padding: 10px 20px;
+			border: none;
+			border-radius: 4px;
+			cursor: pointer;
+			float: right;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #45a049;
+		}
+
+		form {
+			margin: 20px;
+			display: inline-block;
+			width: 100%;
+		}
+
+	</style>
+  </head>
+  <body>
+    <header>
+      <h1>The Baked Goods Shop</h1>
+      <nav>
+        <ul>
+          <li><a href="/home">Home</a></li>
+          <li><a href="/menu">Menu</a></li>
+          <li><a href="/contact">Contact Us</a></li>
+          <li><a href="/order/create" class="btn btn-info">Create New Order</a></li>
+          <li><a href="/logout" class="btn btn-info">Logout</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>Our Menu</h2>
+      <h3>Cakes</h3>
+      <ul>
+        <li>
+          <h4>Chocolate Cake</h4>
+          <p>Rich and moist chocolate cake layers filled and frosted with chocolate buttercream.</p>
+          <p>Price: $30 for a 6-inch cake </p>
+          <img src="{{ url_for('static', filename='choc_cake.jpg') }}" alt="A delicious cake" width="200" height="150">
+        </li>
+        <li>
+          <h4>Vanilla Cake</h4>
+          <p>A classic vanilla cake with layers of vanilla buttercream.</p>
+          <p>Price: $25 for a 6-inch cake</p>
+        </li>
+        <li>
+          <h4>Carrot Cake</h4>
+          <p>Moist and spiced carrot cake with layers of cream cheese frosting and chopped pecans.</p>
+          <p>Price: $35 for a 6-inch cake </p>
+          <img src="{{ url_for('static', filename='carrot_cake.jpg') }}" alt="A carrot cake" width="200" height="150">
+        </li>
+        <li>
+          <h4>Red Velvet Cake</h4>
+          <p>A classic southern cake with layers of tangy cream cheese frosting.</p>
+          <p>Price: $35 for a 6-inch cake</p>
+          <img src="{{ url_for('static', filename='red.jpg') }}" alt="A red velvet cake" width="200" height="150">
+        </li>
+        <li>
+          <h4>Coconut Cake</h4>
+          <p>A tropical delight with layers of coconut cake, coconut cream cheese frosting, and shredded coconut.</p>
+          <p>Price: $40 for a 6-inch cake </p>
+          <img src="{{ url_for('static', filename='coconut.jpg') }}" alt="A coconut cake" width="200" height="150">
+        </li>
+      </ul>
+      <h3>Cupcakes</h3>
+      <ul>
+        <li>
+          <h4>Vanilla Cupcake</h4>
+          <p>A classic cupcake made with vanilla cake and vanilla buttercream frosting.</p>
+          <p>Price: $3 each </p>
+          <img src="{{ url_for('static', filename='van.jpg') }}" alt="A delicious cupcake" width="200" height="150">
+        </li>
+        <li>
+          <h4>Chocolate Cupcake</h4>
+          <p>A rich and decadent cupcake made with chocolate cake and chocolate buttercream frosting.</p>
+          <p>Price: $3 each </p>
+          <img src="{{ url_for('static', filename='choc_cc.jpg') }}" alt="A chocolate cupcake" width="200" height="150">
+        </li>
+        <li>
+          <h4>Red Velvet Cupcake</h4>
+          <p>A tangy and moist cupcake made with cocoa and buttermilk, topped with cream cheese frosting.</p>
+          <p>Price: $3.50 each</p>
+        </li>
+        <li>
+          <h4>Carrot Cupcake</h4>
+          <p>A deliciously spiced cupcake made with shredded carrots and cream cheese frosting.</p>
+          <p>Price: $3.50 each </p>
+        </li>
+        <li>
+          <h4>Lemon Cupcake</h4>
+          <p>A refreshing cupcake made with lemon cake and lemon buttercream frosting.</p>
+          <p>Price: $3 each </p>
+        </li>
+      </ul>
+      <h3>Cookies</h3>
+      <ul>
+        <li>
+          <h4>Chocolate Chip Cookies</h4>
+          <p>Crispy on the outside and chewy on the inside, made with semi-sweet chocolate chips.</p>
+          <p>Price: $2 each </p>
+          <img src="{{ url_for('static', filename='cc_cook.jpg') }}" alt="CC cookie" width="200" height="150">
+        </li>
+        <li>
+          <h4>Oatmeal Raisin Cookies</h4>
+          <p>Soft and chewy cookies made with oats and raisins.</p>
+          <p>Price: $2 each </p>
+          <img src="{{ url_for('static', filename='oatmeal.jpg') }}" alt="oatmeal cookie" width="200" height="150">
+        </li>
+        <li>
+          <h4>Sugar Cookies</h4>
+          <p>Buttery and sweet cookies in fun shapes, decorated with icing.</p>
+          <p>Price: $2 each </p>
+          <img src="{{ url_for('static', filename='sugar.jpg') }}" alt="sugar cookies" width="200" height="150">
+        </li>
+        <li>
+          <h4>Snickerdoodle Cookies</h4>
+          <p>Cinnamon-sugar coated cookies with a soft and chewy texture.</p>
+          <p>Price: $2 each </p>
+        </li>
+        <li>
+          <h4>Double Chocolate Cookies</h4>
+          <p>Soft and fudgy cookies made with cocoa powder and dark chocolate chips.</p>
+          <p>Price: $2 each </p>
+        </li>
+      </ul>
+    </main>
+    <footer>
+      <p>&copy; 2023 The Baked Goods Shop. All rights reserved.</p>
+    </footer>
+  </body>
+</html>
